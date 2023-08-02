@@ -1,5 +1,20 @@
 def calculate_swap(eth_balance, usd_balance, target_eth_ratio, min_eth_balance_after_swap=10):
-   
+   """
+	Performs a swap between ETH and USD balances based on the given parameters.
+
+	Args:
+	    eth_balance (float): The current ETH balance.
+	    usd_balance (float): The current USD balance.
+	    target_eth_ratio (float): The desired ETH ratio.
+	    min_eth_balance_after_swap (float, optional): The minimum ETH balance after the swap. Defaults to 10.
+
+	Returns:
+	    Tuple[float, float, int, str]: A tuple containing the updated ETH balance, updated USD balance, swap amount, and swap direction.
+
+	Raises:
+	    None.
+
+	"""
     total_balance = eth_balance + usd_balance
     min_ratio_ETH = (MIN_SWAP_VALUE + min_eth_balance_after_swap) / total_balance
     max_ratio_ETH = (MAX_SWAP_VALUE + min_eth_balance_after_swap) / total_balance
